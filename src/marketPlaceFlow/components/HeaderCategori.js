@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 
-export default function HeaderCategori() {
+export default function HeaderCategori({data={}}) {
   return (
     <View style={styles.container}>
       <Image 
-        source={require('../../assets/img/marketPlace/headerSneakers.png')} 
+        source={data.imgUri} 
         resizeMode="contain" 
         style={{width:'100%',height:200}}
       />
-      <Text style={styles.tittle}>Las mejores zapatillas de Madrid</Text>
+      <Text style={styles.tittle}>{data.tittle}</Text>
     </View>
   )
 }
@@ -17,7 +17,7 @@ export default function HeaderCategori() {
 const styles = StyleSheet.create({
   container:{
     width:'100%',
-    padding:4,
+    padding:6,
     marginBottom:8,
     alignItems: 'center',
   },
