@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Text, View, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 import LinearGradient from 'react-native-linear-gradient';
@@ -39,7 +39,7 @@ export default function ShopingCard({id,imgUri=null,tittle="",price="",cuantity=
           <Text style={styles.price}>${price}</Text>
         </View>
         <View style={styles.counter}>
-          <TouchableOpacity onPress={()=>setCuantity(x=>x>1?x-1:x)} >
+          <TouchableOpacity onPress={()=>setCuantity(id,(cuantity>1?cuantity-1:cuantity))} >
             <Image 
               source={require('../../assets/img/icons/less.png')} 
               resizeMode="contain" 
@@ -47,7 +47,7 @@ export default function ShopingCard({id,imgUri=null,tittle="",price="",cuantity=
             />
           </TouchableOpacity>
           <Text style={styles.text}>{cuantity}</Text>
-          <TouchableOpacity onPress={()=>setCuantity(x=>x+1)} >
+          <TouchableOpacity onPress={()=>setCuantity(id,cuantity+1)} >
             <Image 
               source={require('../../assets/img/icons/more.png')} 
               resizeMode="contain" 

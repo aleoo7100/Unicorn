@@ -10,10 +10,16 @@ import CommentCard from '../components/CommentCard'
 import RateBox from '../components/RateBox'
 import RateStatus from '../components/RateStatus'
 import { Context } from '../../GlobalContext'
+import MessageAlert from '../../genericComponents/MessageAlert'
 
 export default function ProductDetailScreen({navigation,route}) { 
   const [product, setProduct] = useState({})
   const [selectedColor, setSelectedColor] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [showAlert, setShowAlert] = useState({
+    active: false,
+    message: null,
+  });
   const {
     state: { shopingList },
     dispatch: { setShopingList },
@@ -33,20 +39,40 @@ export default function ProductDetailScreen({navigation,route}) {
   }
 
   function addProduct(cuantity) {
-    product.cuantity=cuantity;
-    let productExist = shopingList.find(item=>item.id===product.id);
-    if(productExist){
-      // productExist
-    }{
-      const newShopingList=shopingList||[];
-      newShopingList.push(product)
-      setShopingList(newShopingList);
-    }
+    setLoading(true);
+    setTimeout(() => { 
+      product.cuantity=cuantity;
+      let productExist = shopingList.find(item=>item.id===product.id);
+      if(productExist){
+        generateAlert('Este producto ya se encuentra en tu lista de compras')
+      }else{
+        const newShopingList=shopingList||[];
+        newShopingList.push(product)
+        setShopingList(newShopingList);
+      }
+      setLoading(false);
+    }, 1000);
+  }
+
+  function generateAlert(message, type) {
+    setShowAlert({
+      active: true,
+      message,
+      type,
+    });
+    setTimeout(() => {
+      setShowAlert({
+        active: false,
+        message,
+        type,
+      });
+    }, 3000);
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <HeaderBar tittle={"Sneakers!!!"} onPressBack={()=>navigation.goBack()} onPressBookmark={()=>{}} onPressShare={()=>{}} />
+      <MessageAlert showAlert={showAlert} />
 
       <ScrollView>
         <View style={{width:'100%',paddingHorizontal:16}}>
@@ -84,7 +110,7 @@ export default function ProductDetailScreen({navigation,route}) {
             />
           }
 
-          <AddProductSelector addProduct={addProduct} />
+          <AddProductSelector addProduct={addProduct} loading={loading} />
 
           <RateStatus/>
 

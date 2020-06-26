@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import { Text, View, Image, StyleSheet } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function SplashScreen ({navigation}) {
 
@@ -14,9 +15,11 @@ export default function SplashScreen ({navigation}) {
   }
 
   return (
-    <View style={styles.container}>
-      {/* <Image source={require('../../assets/img/logoFondoBlue.png')} style={{width:200,height:200}} /> */}
-    </View>
+      <LinearGradient colors={['#fea0a8', '#ff7783']} style={styles.container}>
+        <Text style={styles.text}>
+          21Unicorn
+        </Text>
+      </LinearGradient>
   )
 }
 
@@ -27,5 +30,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#0BACEA',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  text:{
+    fontSize:30,
+    color:'#fff',
+    fontFamily:'Muli-Bold'
   }
 })

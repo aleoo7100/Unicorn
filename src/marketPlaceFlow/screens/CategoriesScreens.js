@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import HeaderBar from '../../genericComponents/HeaderBar'
 import { FlatList } from 'react-native-gesture-handler'
 import HeaderCategori from '../components/HeaderCategori'
 import ProductItem from '../components/ProductItem'
+import { Context } from '../../GlobalContext'
 
 export default function CategoriesScreens({navigation}) {
   const [headerItems, setHeaderItems] = useState({});
   const [items, setItems] = useState([]);
+  const {
+    state: { shopingList},
+  } = useContext(Context);
 
   useEffect(() => {
     didMount()
@@ -21,7 +25,7 @@ export default function CategoriesScreens({navigation}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderBar tittle={"Sneakers!!!"} onPressCart={()=>navigation.navigate('BuyCartScreen')} />
+      <HeaderBar tittle={"Sneakers!!!"} onPressCart={()=>navigation.navigate('BuyCartScreen')} cuantity={shopingList.length} />
       <FlatList
         data={items}
         keyExtractor={item => item.id}

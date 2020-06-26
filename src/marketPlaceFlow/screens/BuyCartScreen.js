@@ -12,8 +12,16 @@ export default function BuyCartScreen({navigation}) {
   } = useContext(Context);
 
   function deleteProduct(id) {
-    alert(id)
+    const newShopingList = shopingList.filter(item=>item.id!==id);
+    setShopingList(newShopingList)
   }
+  function setCuantity(id,num) {
+    const newShopingList = shopingList;
+    newShopingList.find(item=>item.id===id).cuantity=num;
+    setShopingList(newShopingList)
+  }
+
+
   return (
     <SafeAreaView style={styles.container}>
       <HeaderBar onPressBack={()=>navigation.goBack()} tittle={"Carrito"} />
@@ -24,11 +32,13 @@ export default function BuyCartScreen({navigation}) {
         ListFooterComponent={()=><View style={{height:16}}/>}
         renderItem={({item})=>
           <ShopingCard
+            key={item.id}
             id={item.id}
             tittle={item.tittle}
             price={item.price}
             imgUri={item.imgUri}
             cuantity={item.cuantity}
+            setCuantity={setCuantity}
             onDelete={deleteProduct}
           />
         }

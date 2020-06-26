@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Button from '../../genericComponents/Button'
 
-export default function AddProductSelector({addProduct}) {
+export default function AddProductSelector({addProduct,loading}) {
   const [cuantity, setCuantity] = useState(1)
   return (
     <View style={styles.container}>
@@ -24,7 +24,7 @@ export default function AddProductSelector({addProduct}) {
           />
         </TouchableOpacity>
       </View>
-      <Button tittle="Agregar" onPress={()=>addProduct(cuantity)} />
+      <Button tittle="Agregar" onPress={()=>addProduct(cuantity)} loading={loading} />
     </View>
   )
 }
