@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import HeaderBar from '../../genericComponents/HeaderBar'
 import { FlatList } from 'react-native-gesture-handler'
 import HeaderCategori from '../components/HeaderCategori'
 import ProductItem from '../components/ProductItem'
 
-
-
-export default function CategoriesScreens() {
+export default function CategoriesScreens({navigation}) {
   const [headerItems, setHeaderItems] = useState({});
   const [items, setItems] = useState([]);
 
@@ -23,7 +21,7 @@ export default function CategoriesScreens() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <HeaderBar tittle={"Sneakers!!!"} />
+      <HeaderBar tittle={"Sneakers!!!"} onPressCart={()=>navigation.navigate('BuyCartScreen')} />
       <FlatList
         data={items}
         keyExtractor={item => item.id}
@@ -35,6 +33,7 @@ export default function CategoriesScreens() {
         ListFooterComponent={()=><View style={{height:16}}/>}
         renderItem={({item})=>
           <ProductItem
+            onPress={()=>navigation.navigate('ProductDetailScreen',{item})}
             item={item}
           />
         }
@@ -63,38 +62,54 @@ const SNEAKERS_CATEGORI = {
       tittle:"Tennis clásicos vans old school",
       price:"220",
       oldPrice:"250",
-      imgUri:require('../../assets/img/marketPlace/item1/1.png')
+      description:"Los tennis que se tomaron los 80’s están devuelta para darle un toque vieja escuela a tu look para lograr tener el mejor estilo casual.",
+      imgUri:require('../../assets/img/marketPlace/item1/1.png'),
+      colors:[{color:'#9fbcff'},{color:'#ff7062'},{color:'#ffdf9b'}],
+      starts:4
     },
     {
       id:"2",
       tittle:"Tennis negros nike",
       price:"220",
-      imgUri:require('../../assets/img/marketPlace/item2/1.png')
+      description:"Los tennis que se tomaron los 80’s están devuelta para darle un toque vieja escuela a tu look para lograr tener el mejor estilo casual.",
+      imgUri:require('../../assets/img/marketPlace/item2/1.png'),
+      starts:2
     },
     {
       id:"3",
       tittle:"Tennis deportivos nike azul oscuro",
       price:"220",
       oldPrice:"250",
-      imgUri:require('../../assets/img/marketPlace/item3/1.png')
+      description:"Los tennis que se tomaron los 80’s están devuelta para darle un toque vieja escuela a tu look para lograr tener el mejor estilo casual.",
+      imgUri:require('../../assets/img/marketPlace/item3/1.png'),
+      colors:[{color:'#9fbcff'},{color:'#ff7062'},{color:'#ffdf9b'}],
+      starts:3
     },
     {
       id:"4",
       tittle:"Airforce",
       price:"220",
-      imgUri:require('../../assets/img/marketPlace/item4/1.png')
+      description:"Los tennis que se tomaron los 80’s están devuelta para darle un toque vieja escuela a tu look para lograr tener el mejor estilo casual.",
+      imgUri:require('../../assets/img/marketPlace/item4/1.png'),
+      colors:[{color:'#9fbcff'},{color:'#ff7062'},{color:'#ffdf9b'}],
+      starts:4
     },
     {
       id:"5",
       tittle:"Tennis deportivos nike blancos",
       price:"220",
-      imgUri:require('../../assets/img/marketPlace/item5/1.png')
+      description:"Los tennis que se tomaron los 80’s están devuelta para darle un toque vieja escuela a tu look para lograr tener el mejor estilo casual.",
+      imgUri:require('../../assets/img/marketPlace/item5/1.png'),
+      colors:[{color:'#9fbcff'},{color:'#ff7062'},{color:'#ffdf9b'}],
+      starts:1
     },
     {
       id:"6",
       tittle:"Tennis deportivos",
       price:"220",
-      imgUri:require('../../assets/img/marketPlace/item6/1.png')
+      description:"Los tennis que se tomaron los 80’s están devuelta para darle un toque vieja escuela a tu look para lograr tener el mejor estilo casual.",
+      imgUri:require('../../assets/img/marketPlace/item6/1.png'),
+      starts:3
     },
   ]
 }

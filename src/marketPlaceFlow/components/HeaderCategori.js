@@ -23,9 +23,8 @@ const styles = StyleSheet.create({
   },
   tittle:{
     color: '#8a97ad',
-    fontFamily: 'Muli',
+    fontFamily: 'Muli-Regular',
     paddingTop:8,
     fontSize: 14,
-    fontWeight: '400',
   }
 })

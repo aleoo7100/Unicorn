@@ -16,6 +16,9 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* UnicornTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* UnicornTests.m */; };
+		712130960D0D433684F717C1 /* Muli-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD78B5B577974E48908B89E7 /* Muli-Black.ttf */; };
+		BE8E0C7EEFEC463DB2A262CB /* Muli-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 650C8B586CD649C19AC0CD5B /* Muli-Bold.ttf */; };
+		BA0EA150B5574472812F1CFB /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C4C94010574425288713D92 /* Muli-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		2D02E4901E0B4A5D006451C7 /* Unicorn-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unicorn-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		AD78B5B577974E48908B89E7 /* Muli-Black.ttf */ = {isa = PBXFileReference; name = "Muli-Black.ttf"; path = "../src/assets/fonts/Muli-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		650C8B586CD649C19AC0CD5B /* Muli-Bold.ttf */ = {isa = PBXFileReference; name = "Muli-Bold.ttf"; path = "../src/assets/fonts/Muli-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5C4C94010574425288713D92 /* Muli-Regular.ttf */ = {isa = PBXFileReference; name = "Muli-Regular.ttf"; path = "../src/assets/fonts/Muli-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,7 @@
 				00E356EF1AD99517003FC87E /* UnicornTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				57FA7DA8CD13460E81EBD4CB /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +163,17 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		57FA7DA8CD13460E81EBD4CB /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AD78B5B577974E48908B89E7 /* Muli-Black.ttf */,
+				650C8B586CD649C19AC0CD5B /* Muli-Bold.ttf */,
+				5C4C94010574425288713D92 /* Muli-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -295,6 +313,9 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				712130960D0D433684F717C1 /* Muli-Black.ttf in Resources */,
+				BE8E0C7EEFEC463DB2A262CB /* Muli-Bold.ttf in Resources */,
+				BA0EA150B5574472812F1CFB /* Muli-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,25 +36,22 @@ const styles = StyleSheet.create({
   tittle:{
     flex:1,
     color: '#000000',
-    fontFamily: 'Muli',
+    fontFamily: 'Muli-Bold',
     fontSize: 12,
-    fontWeight: '700',
     letterSpacing: -0.6,
     lineHeight: 14.4,
   },
   price:{
     color: '#8a97ad',
-    fontFamily: 'Muli',
+    fontFamily: 'Muli-Regular',
     fontSize: 12,
-    fontWeight: '400',
     letterSpacing: -0.6,
   },
   oldPrice:{
     marginRight:6,
     color: '#8a97ad',
-    fontFamily: 'Muli',
+    fontFamily: 'Muli-Regular',
     fontSize: 12,
-    fontWeight: '400',
     letterSpacing: -0.6,
     textDecorationLine:"line-through"
   }

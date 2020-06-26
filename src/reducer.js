@@ -1,13 +1,15 @@
 export const reducer = state => {
   return {
     //Only curry functions:::::
-    setUser: data => ({user: data}),
+    setFavorite: data => ({favorite: data}),
+    setShopingList: data => ({shopingList: data}),
     set: (key, value) => ({[key]: value}),
   };
 };
 
 export const initialState = () => {
   return {
-    user: false,
+    favorite: [],
+    shopingList: [],
   };
 };

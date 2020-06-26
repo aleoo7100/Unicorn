@@ -6,6 +6,8 @@ import { Provider } from './src/GlobalContext';
 
 import SplashScreen from './src/authFlow/screens/SplashScreen';
 import CategoriesScreens from './src/marketPlaceFlow/screens/CategoriesScreens';
+import ProductDetailScreen from './src/marketPlaceFlow/screens/ProductDetailScreen';
+import BuyCartScreen from './src/marketPlaceFlow/screens/BuyCartScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +20,8 @@ export default function App() {
         <Stack.Navigator initialRouteName="SplashScreen" headerMode={null}>
           <Stack.Screen name="SplashScreen" component={SplashScreen} />
           <Stack.Screen name="CategoriesScreens" component={CategoriesScreens} />
-        
+          <Stack.Screen name="ProductDetailScreen" component={ProductDetailScreen} />
+          <Stack.Screen name="BuyCartScreen" component={BuyCartScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
